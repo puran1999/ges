@@ -8,5 +8,5 @@ The common use of English script for the Punjabi or Gurmukhi language is ambiguo
 Go̅rmukhi script standardizes the sounds assigned to the English script alphabets. It also adds a few more symbols for other unique sounds, not found in the common set of English alphabets.
 
 ## Why Go̅rmukhi
--The new added alphabets look similar to the alternative closest sounding alphabets, so that anyone not knowing Go̅rmukhi can still read the text.
--The writing structure is easy to grasp and a dedicated keyboard is available (Current support: PC and Android)
+- The new added alphabets look similar to the alternative closest sounding alphabets, so that anyone not knowing Go̅rmukhi can still read the text.
+- The writing structure is easy to grasp and a dedicated keyboard is available (Current support: PC and Android)
