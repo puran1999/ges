@@ -27,19 +27,48 @@ This can be a good option to at least demonstrate the concept.
 ### Android system keyboard
 Maybe try system keyboard once again?
 
+
 # 2024-May-19: Android system keyboard - first run
 Searched for different android keyboard projects online, trying to find a simple keyboard. Shortlisted the ["simple-keyboard"](https://github.com/rkkr/simple-keyboard/tree/master) based on the most recent and simple designs from a bunch of options.
 The idea is to change the code according to our needs. The keyboard was compiled successfully and run on a device. Build process to generate a ".apk" file was also tested.
 
-# 2024-May-25: Android system keyboard - custom keys
-The keyboard files are distributed all over in the folder:
-```
-D:\Workspace\Projects\Gormukhi\android_keyboards\simple-keyboard-master\app\src\main\res\xml
-```
 
+# 2024-May-25: Android system keyboard - custom keys
+
+### The XML mess
+The keyboard layout files are distributed all over in the folder "app\src\main\res\xml". This is because keyboard supports multiple languages and different layouts. The file for default English(UK) with qwerty layout was backtraced to be the "kbd_qwerty.xml". This file reffered to another file "rows_qwerty.xml" for rows definition, which further reffered other files for individual rows.
+
+The files of interest for individual rows are "rowkeys_qwerty1.xml", "rowkeys_qwerty2.xml" and "rowkeys_qwerty3.xml".
+These files use string values, which were found in "KeyboardTextsTable.java" in the folder "app\src\main\java\rkr\simplekeyboard\inputmethod\keyboard\internal". (At this point everything was being found using global search shortcut: **ctrl+shift+F** to find the values)
+
+### Modification
+The values defined in "KeyboardTextsTable.java" are used directly in "rowkeys_qwerty1.xml", "rowkeys_qwerty2.xml" and "rowkeys_qwerty3.xml". These files control what to show on keys, what to type, long press and more options available after long press.
+
+For example, here is a code for q,w and e, modified modified to show different cases. Each string **value** can have single or multiple characters/unicodes.
+- **keySpec** - value shown on the keys and typed when pressed.
+- **keyHintLabel** - value that is shown at the upper right corner of the key.
+- **additionalMoreKeys** - value that appears in a popup when longpressed. Releasing long press types this value.
+- **moreKeys** - single or multiple values to display in the long press popup. Slide the finger to reach the desired value, then release to type that.
+```
+<Key
+    latin:keySpec="q"
+    latin:keyHintLabel="1"
+    latin:additionalMoreKeys="1"/>
+<Key
+    latin:keySpec="w"
+    latin:keyHintLabel="2"
+    latin:additionalMoreKeys="2"
+    latin:moreKeys="3,4,5" />
+<Key
+    latin:keySpec="e"
+    latin:keyHintLabel="3"
+    latin:additionalMoreKeys="3"
+    latin:moreKeys="\u00DF,\u0161,\u015B," />
+```
+Minor issue: caps lock capitalizes all the letters. Special symbols also change. **Not fully tested**.
 
 # 2024-May-27: Android system keyboard - custom combination logic
-Edited the file "InputLogic.java" in "app\src\main\java\rkr\simplekeyboard\inputmethod\latin\inputlogic" and added a function:
+Edited the file "InputLogic.java" in the folder "app\src\main\java\rkr\simplekeyboard\inputmethod\latin\inputlogic" and added a function:
 ```
 private int customLogic(final int codePoint)
 ```
