@@ -31,11 +31,15 @@ Maybe try system keyboard once again?
 Searched for different android keyboard projects online, trying to find a simple keyboard. Shortlisted the ["simple-keyboard"](https://github.com/rkkr/simple-keyboard/tree/master) based on the most recent and simple designs from a bunch of options.
 The idea is to change the code according to our needs. The keyboard was compiled successfully and run on a device. Build process to generate a ".apk" file was also tested.
 
-# 2024-May-27: Android system keyboard - custom keys
+# 2024-May-25: Android system keyboard - custom keys
 Implemented custom keys.
 
-
-
+# 2024-May-27: Android system keyboard - custom combination logic
+Edited the file "InputLogic.java" in "app\src\main\java\rkr\simplekeyboard\inputmethod\latin\inputlogic" and added a function:
+```
+private int customLogic(final int codePoint)
+```
+which contains all the custom logic for character combinations.
 
 
 
