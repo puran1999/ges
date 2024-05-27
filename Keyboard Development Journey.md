@@ -32,7 +32,11 @@ Searched for different android keyboard projects online, trying to find a simple
 The idea is to change the code according to our needs. The keyboard was compiled successfully and run on a device. Build process to generate a ".apk" file was also tested.
 
 # 2024-May-25: Android system keyboard - custom keys
-Implemented custom keys.
+The keyboard files are distributed all over in the folder:
+```
+D:\Workspace\Projects\Gormukhi\android_keyboards\simple-keyboard-master\app\src\main\res\xml
+```
+
 
 # 2024-May-27: Android system keyboard - custom combination logic
 Edited the file "InputLogic.java" in "app\src\main\java\rkr\simplekeyboard\inputmethod\latin\inputlogic" and added a function:
