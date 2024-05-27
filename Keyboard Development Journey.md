@@ -1,5 +1,6 @@
 # 2024-Feb-18: Android system keyboard
-Used Android studio to design a custom android keyboard. Very basic and lack of many essential features. Compiled successfully, but did not run on the device.
+Used Android studio to design a custom android keyboard, following steps from a [video](https://www.youtube.com/watch?v=cHzU8LfGSYA).
+Very basic and lack of many essential features. Compiled successfully, but did not run on the device.
 
 # 2024-Feb-23: Keyman Client
 keyman is a keyboard software, where users can create their own keyboards.
