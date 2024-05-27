@@ -15,13 +15,13 @@ Smartphone keyboard development is more important than computer keyboard because
 - Smartphone keyboards are highly customizable and can even change dynamically, that all with just installing just a new keyboard application.
 - More people type on smartphones.
 Although windows keyboard looks promising using Keyman, but the development of the smartphone keyboard is more important.
-## Figma
+#### Figma
 [Figma](https://www.figma.com/) is a UI/UX development tool used by clients to demonstrate a mock application interface to the coders. A video demonstration od building a keyboard in Figma
 can be seeen [here](https://www.youtube.com/watch?v=Syk6YWKtxmg&t=384s&pp=ygUOZmlnbWEga2V5Ym9hcmQ%3D). The keyboard UI and layout can be built to be the best in Figma, but backend is not that great.
 The creator of the video claims that he has no way of implimenting the backspace yet! So no hope!
-## Flutter
+#### Flutter
 Flutter is good for developing cross platform apps that can run on android, IOS, web, Windows, Mac, etc. The native keyboard cannot be built with flutter, but in-app keyboards are possible.
 The idea is to make a dedicated flutter app, that the user can use to write the text using custom keyboard. The text can simply be coped and pasted, just like a notepad.
 This can be a good option to at least demonstrate the concept.
-## Android system keyboard
+#### Android system keyboard
 Maybe try system keyboard once again?
