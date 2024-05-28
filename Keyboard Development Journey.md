@@ -40,9 +40,13 @@ The keyboard layout files are distributed all over in the folder "app\src\main\r
 
 The files of interest for individual rows are "rowkeys_qwerty1.xml", "rowkeys_qwerty2.xml" and "rowkeys_qwerty3.xml".
 These files use string values, which were found in "KeyboardTextsTable.java" in the folder "app\src\main\java\rkr\simplekeyboard\inputmethod\keyboard\internal". (At this point everything was being found using global search shortcut: **ctrl+shift+F** to find the values)
+Another file "rowkeys_qwerty0.xml" has only number row, which is displayed only if a separate number row is enabled.
+The file "rowkeys_qwerty4.xml" has spacebar, period, enter and other buttons.
+The values defined in "KeyboardTextsTable.java" are used directly in these files.
+These files control what to show on keys, what to type, long press and more options available after long press.
 
 ### Modification
-The values defined in "KeyboardTextsTable.java" are used directly in "rowkeys_qwerty1.xml", "rowkeys_qwerty2.xml" and "rowkeys_qwerty3.xml". These files control what to show on keys, what to type, long press and more options available after long press.
+The files "rowkeys_qwerty0.xml", "rowkeys_qwerty1.xml", "rowkeys_qwerty2.xml", "rowkeys_qwerty3.xml" and "rowkeys_qwerty4.xml" are edited. 
 
 For example, here is a code for q,w and e, modified modified to show different cases. Each string **value** can have single or multiple characters/unicodes.
 - **keySpec** - value shown on the keys and typed when pressed.
@@ -65,7 +69,9 @@ For example, here is a code for q,w and e, modified modified to show different c
     latin:additionalMoreKeys="3"
     latin:moreKeys="\u00DF,\u0161,\u015B," />
 ```
-Minor issue: caps lock capitalizes all the letters. Special symbols also change. **Not fully tested**.
+Another good feature is that caps lock automatically capitalizes all the letters, so no extra definitions are required. At first, this seemed problematic, as the special characters would also change. But turns out the logic only works on english and other derived alphabets. Special handling is required if caps is not as expected.
+
+For example, the small case hard t is ʈ, which turns to Ʈ rather than the desired Ƭ.
 
 # 2024-May-27: Android system keyboard - custom combination logic
 Edited the file "InputLogic.java" in the folder "app\src\main\java\rkr\simplekeyboard\inputmethod\latin\inputlogic" and added a function:
@@ -73,7 +79,9 @@ Edited the file "InputLogic.java" in the folder "app\src\main\java\rkr\simplekey
 private int customLogic(final int codePoint)
 ```
 which contains all the custom logic for character combinations.
+##Current Bugs/Limitations
+The modifier key uses backspace and types new character. Consider if any app like google chrome autofills the familiar text as you type. For example, press "p" then "a" and autofill shows "path" with "th" selected, so that you keep on writing and autofill will not interfere. But in our case, if you press "－" after "a", the backspace would only cut "th", making the text "paā" instead of the desired "pā".
 
-
+FIX: after the autofill, just press backspace to clear it, then procede to press the modifier key.
 
 
