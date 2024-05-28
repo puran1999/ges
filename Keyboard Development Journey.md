@@ -79,7 +79,7 @@ Edited the file "InputLogic.java" in the folder "app\src\main\java\rkr\simplekey
 private int customLogic(final int codePoint)
 ```
 which contains all the custom logic for character combinations.
-##Current Bugs/Limitations
+## Current Bugs/Limitations
 The modifier key uses backspace and types new character. Consider if any app like google chrome autofills the familiar text as you type. For example, press "p" then "a" and autofill shows "path" with "th" selected, so that you keep on writing and autofill will not interfere. But in our case, if you press "－" after "a", the backspace would only cut "th", making the text "paā" instead of the desired "pā".
 
 FIX: after the autofill, just press backspace to clear it, then procede to press the modifier key.
