@@ -80,9 +80,7 @@ private int customLogic(final int codePoint)
 ```
 which contains all the custom logic for character combinations.
 ## Current Bugs/Limitations
-The modifier key uses backspace and types new character. Consider if any app like google chrome autofills the familiar text as you type. For example, press "p" then "a" and autofill shows "path" with "th" selected, so that you keep on writing and autofill will not interfere. But in our case, if you press "－" after "a", the backspace would only cut "th", making the text "paā" instead of the desired "pā".
-
-FIX: after the autofill, just press backspace to clear it, then procede to press the modifier key.
+If the cursor is placed in between the written text, then modifier still works on the character previous to the cursor, but it then displaces the cursor to another position.
 
 # 2024-May-29: Android system keyboard - apk release for preview
 An app as .apk file is released for preview.
