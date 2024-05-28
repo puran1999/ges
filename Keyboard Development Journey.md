@@ -84,4 +84,9 @@ The modifier key uses backspace and types new character. Consider if any app lik
 
 FIX: after the autofill, just press backspace to clear it, then procede to press the modifier key.
 
+# 2024-May-29: Android system keyboard - apk release for preview
+An app as .apk file is released for preview.
+
+Implemented all custom keys. Implemented all "－" key modifier rules. Tippi and bindi not implemented yet. 
+
 
