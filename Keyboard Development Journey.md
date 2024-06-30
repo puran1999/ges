@@ -88,4 +88,4 @@ An app as .apk file is released for preview.
 Implemented all custom keys. Implemented all "－" key modifier rules. Tippi and bindi not implemented yet. 
 
 # 2024-May-29: Android system keyboard - apk release for preview
-Implemented tippi and bindi. Updated github using git.
+Implemented tippi and bindi. Updated github.
