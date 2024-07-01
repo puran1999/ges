@@ -88,4 +88,17 @@ An app as .apk file is released for preview.
 Implemented all custom keys. Implemented all "－" key modifier rules. Tippi and bindi not implemented yet. 
 
 # 2024-May-29: Android system keyboard - apk release for preview
-Implemented tippi and bindi. Updated github using git GUI for ease.
+Now the modifier key "-" in place of 'W' toggles the modification of a character.
+Implemented tippi and bindi.
+Needed a setting to disable and enable automatic bindi and tippi. The setting of show number row is not needed, it should be shown always. So reused the same variable, just edited the src\main\res\values\strings.xml line:
+```
+<string name="show_number_row">Show separate number row</string>
+```
+to show the user this message in the settings page:
+```
+<string name="show_number_row">Disable auto tippi and bindi</string>
+```
+This needs to be done properly in the future.
+
+
+
