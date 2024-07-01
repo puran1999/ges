@@ -98,6 +98,7 @@ to show the user this message in the settings page:
 ```
 <string name="show_number_row">Disable auto tippi and bindi</string>
 ```
+To implement and see the setting in the InputLogic.java file, where the main tipi and bindi code is, more changes were done to that same file. A bunch of functions were modified to pass over the value of setting via the inputTransaction argument.
 This needs to be done properly in the future.
 
 
